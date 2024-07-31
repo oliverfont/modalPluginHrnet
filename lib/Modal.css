@@ -1,0 +1,34 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	box-shadow: 0 0 10px #000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 5px 15px;
+    border-radius: 8px;
+    width: 30%;
+    height: fit-content;
+    position: relative;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./assets/close.png');
+    cursor: pointer;
+}
