@@ -1,7 +1,6 @@
 {
-  "name": "modal-plugin",
+  "name": "m0d4l_plugin",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
