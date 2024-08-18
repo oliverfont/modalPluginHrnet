@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# m0d4l_plugin
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`m0d4l_plugin` est un plugin React léger et personnalisable pour afficher des modales. Il permet aux développeurs de configurer la taille, le contenu, l'icône de fermeture, et plus encore.
 
-## Available Scripts
+## Table des matières
 
-In the project directory, you can run:
+1. [Installation](#installation)
+2. [Utilisation de Base](#utilisation-de-base)
+3. [Configuration des Props](#configuration-des-props)
+4. [Exemple d'Utilisation avec Configuration](#exemple-dutilisation-avec-configuration)
+5. [Tests](#tests)
+6. [Licence](#licence)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Installez le plugin via npm :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install m0d4l_plugin@latest
+```
 
-### `npm test`
+## Utilisation de Base
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Voici un exemple simple d'utilisation du plugin dans un composant React.
 
-### `npm run build`
+```bash
+import React, { useState } from 'react';
+import Modal from 'm0d4l_plugin';
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+const App = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  return (
+    <div>
+      <button onClick={openModal}>Ouvrir la Modale</button>
+      <Modal isOpen={modalIsOpen} onClose={closeModal}>
+        <p>Contenu de la modale</p>
+      </Modal>
+    </div>
+  );
+};
 
-### `npm run eject`
+export default App;
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Configuration des Props
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Le composant Modal accepte plusieurs props qui permettent de le personnaliser en fonction de vos besoins.
+Prop	Type	Description	Valeur par défaut
+isOpen	boolean	Contrôle si la modale est ouverte ou fermée	false
+onClose	function	Fonction de rappel appelée pour fermer la modale	() => {}
+title	string	Titre de la modale	''
+size	string	Taille de la modale (small, medium, large)	medium
+closeIcon	string	Chemin vers l'image de l'icône de fermeture	''
+customStyles	object	Objet contenant les styles personnalisés	{}
+closeButtonStyles	object	Styles personnalisés pour le bouton de fermeture	{}
+Détails des Props
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    isOpen : Détermine si la modale doit être affichée ou non. Le contrôle de cet état est géré par votre composant parent.
+    onClose : Fonction appelée lorsque la modale doit être fermée (comme lors du clic sur l'icône de fermeture).
+    title : Un titre optionnel pour la modale, qui sera affiché au-dessus du contenu principal.
+    size : Définit la taille de la modale (small, medium, large).
+    closeIcon : Vous permet de personnaliser l'icône de fermeture. Par exemple, vous pouvez passer un chemin d'image pour utiliser une icône spécifique.
+    customStyles : Un objet vous permettant de surcharger les styles par défaut de la modale.
+    closeButtonStyles : Permet de personnaliser les styles du bouton de fermeture.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Exemple d'Utilisation avec Configuration
 
-## Learn More
+Voici un exemple plus avancé qui montre comment personnaliser la modale en utilisant différentes props.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+import React, { useState } from 'react';
+import Modal from 'm0d4l_plugin';
+import closeIcon from './assets/close.png';  // Icône de fermeture personnalisée
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+const App = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-### Code Splitting
+  return (
+    <div>
+      <button onClick={() => setModalIsOpen(true)}>Ouvrir la Modale</button>
+      <Modal
+        isOpen={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+        title="Titre de la modale"
+        size="large"
+        closeIcon={closeIcon}
+        customStyles={{
+          modal: { backgroundColor: 'rgba(0, 0, 0, 0.8)' },
+          modalContent: { padding: '20px', borderRadius: '10px' }
+        }}
+      >
+        <p>Contenu de la modale personnalisé</p>
+      </Modal>
+    </div>
+  );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default App;
+```
 
-### Analyzing the Bundle Size
+## Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Pour exécuter les tests du plugin, utilisez la commande suivante :
 
-### Making a Progressive Web App
+```bash
+npm run test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Les tests sont exécutés avec Jest et React Testing Library.
 
-### Advanced Configuration
+## Licence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+m0d4l_plugin est sous licence MIT.
