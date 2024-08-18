@@ -8,8 +8,7 @@
 2. [Utilisation de Base](#utilisation-de-base)
 3. [Configuration des Props](#configuration-des-props)
 4. [Exemple d'Utilisation avec Configuration](#exemple-dutilisation-avec-configuration)
-5. [Tests](#tests)
-6. [Licence](#licence)
+5. [Licence](#licence)
 
 ## Installation
 
@@ -101,16 +100,6 @@ const App = () => {
 
 export default App;
 ```
-
-## Tests
-
-Pour exécuter les tests du plugin, utilisez la commande suivante :
-
-```bash
-npm run test
-```
-
-Les tests sont exécutés avec Jest et React Testing Library.
 
 ## Licence
 
