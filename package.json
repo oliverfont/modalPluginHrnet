@@ -1,9 +1,14 @@
 {
   "name": "m0d4l_plugin",
-  "version": "0.2.4",
+  "version": "0.2.7",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib && npx copyfiles -u 1 src/*.css lib && npx copyfiles -u 1 src/assets/close.png lib/assets"
+
+
+
+
+
+    "build": "babel src --out-dir lib && npx copyfiles -u 1 'src/**/*.css' lib"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -15,5 +20,8 @@
     "@babel/preset-env": "^7.25.2",
     "@babel/preset-react": "^7.24.7",
     "copyfiles": "^2.4.1"
+
+
+
   }
 }
