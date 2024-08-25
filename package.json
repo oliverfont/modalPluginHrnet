@@ -1,6 +1,6 @@
 {
   "name": "m0d4l_plugin",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc && npx copyfiles -u 1 'src/**/*.css' lib"

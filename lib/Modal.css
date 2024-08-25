@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 10px #000;
+    z-index: 1000; /* Ajouté pour s'assurer que la modale soit au-dessus d'autres éléments */
 }
 
 .modal-content {
@@ -16,6 +17,21 @@
     padding: 20px;
     border-radius: 8px;
     position: relative;
+    max-width: 100%; /* Pour s'assurer que la modale ne dépasse jamais l'écran */
+    box-sizing: border-box;
+}
+
+/* Définir les différentes tailles de modales */
+.modal-small .modal-content {
+    width: 300px;
+}
+
+.modal-medium .modal-content {
+    width: 600px;
+}
+
+.modal-large .modal-content {
+    width: 900px;
 }
 
 .modal-close-button {
