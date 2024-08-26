@@ -4,13 +4,11 @@ interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     children: ReactNode;
-    title?: string;
     size?: 'small' | 'medium' | 'large';
     closeIcon?: string;
     customStyles?: {
         modal?: React.CSSProperties;
         modalContent?: React.CSSProperties;
-        title?: React.CSSProperties;
         body?: React.CSSProperties;
     };
     closeButtonStyles?: React.CSSProperties;

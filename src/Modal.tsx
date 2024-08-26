@@ -5,13 +5,11 @@ interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  title?: string;
   size?: 'small' | 'medium' | 'large';
   closeIcon?: string;
   customStyles?: {
     modal?: React.CSSProperties;
     modalContent?: React.CSSProperties;
-    title?: React.CSSProperties;
     body?: React.CSSProperties;
   };
   closeButtonStyles?: React.CSSProperties;
@@ -21,7 +19,6 @@ const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   children,
-  title,
   size = 'medium',
   closeIcon,
   customStyles = {},
