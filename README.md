@@ -64,7 +64,7 @@ Détails des Props
     customStyles : Un objet vous permettant de surcharger les styles par défaut de la modale.
     closeButtonStyles : Permet de personnaliser les styles du bouton de fermeture.
 
-## Exemple d'Utilisation avec Configuration
+## Exemple d'utilisation avec configuration
 
 Voici un exemple plus avancé qui montre comment personnaliser la modale en utilisant différentes props.
 
