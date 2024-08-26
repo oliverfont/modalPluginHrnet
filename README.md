@@ -51,7 +51,6 @@ Le composant Modal accepte plusieurs props qui permettent de le personnaliser en
 Prop	Type	Description	Valeur par défaut
 isOpen	boolean	Contrôle si la modale est ouverte ou fermée	false
 onClose	function	Fonction de rappel appelée pour fermer la modale	() => {}
-title	string	Titre de la modale	''
 size	string	Taille de la modale (small, medium, large)	medium
 closeIcon	string	Chemin vers l'image de l'icône de fermeture	''
 customStyles	object	Objet contenant les styles personnalisés	{}
@@ -60,7 +59,6 @@ Détails des Props
 
     isOpen : Détermine si la modale doit être affichée ou non. Le contrôle de cet état est géré par votre composant parent.
     onClose : Fonction appelée lorsque la modale doit être fermée (comme lors du clic sur l'icône de fermeture).
-    title : Un titre optionnel pour la modale, qui sera affiché au-dessus du contenu principal.
     size : Définit la taille de la modale (small, medium, large).
     closeIcon : Vous permet de personnaliser l'icône de fermeture. Par exemple, vous pouvez passer un chemin d'image pour utiliser une icône spécifique.
     customStyles : Un objet vous permettant de surcharger les styles par défaut de la modale.
